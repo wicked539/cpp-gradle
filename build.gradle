@@ -1,5 +1,13 @@
 apply plugin: 'cpp'
 
+libraries {
+   	lib {}
+}
+
 executables {
-   main {}
+   	main {
+        binaries.all {
+            lib libraries.lib.static
+        }
+   	}
 }
